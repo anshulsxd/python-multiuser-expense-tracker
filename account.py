@@ -59,3 +59,7 @@ class Login:
         else:
             print("Invalid username or password!")
             return None
+
+class DeleteAcc:
+    def deleteacc():
+        ...

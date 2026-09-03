@@ -25,6 +25,7 @@ while True:
                 print("2. View expense")
                 print("3. Delete expense")
                 print("4. Logout")
+                print("5. DELETE MY ACCOUNT")
                 exp_choice = int(input("Enter: "))
                 if exp_choice == 1:
                     expense.add_expense(userID)
