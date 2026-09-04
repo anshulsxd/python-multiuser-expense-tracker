@@ -2,7 +2,9 @@ import os
 import sqlite3
 import hashlib
 
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "expenseDataBase.db") # finds path (in which folder) of main.py and adds .db file at last of path
+app_dir = os.path.join(os.getenv("APPDATA"), "ExpenseTracker")
+os.makedirs(app_dir, exist_ok=True)
+DB_PATH = os.path.join(app_dir, "expensesDataBase.db")
 
 def create_table():
     connect = sqlite3.connect(DB_PATH) # creats db file
