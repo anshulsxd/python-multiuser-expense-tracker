@@ -3,6 +3,7 @@ import expense
 
 account.create_table()
 expense.create_table()
+delAcc = account.DeleteAcc()
 while True:
     print("===Expense Tracker===")
     print("\n1. Sign up")
@@ -38,6 +39,11 @@ while True:
 
                 elif exp_choice == 4:
                     break
+
+                elif exp_choice == 5:
+                    dele = account.DeleteAcc().deleteacc(userID)
+                    if dele:
+                        break
 
                 else:
                     print("Invalid choice!")

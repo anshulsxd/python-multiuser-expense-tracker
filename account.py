@@ -61,5 +61,45 @@ class Login:
             return None
 
 class DeleteAcc:
-    def deleteacc():
-        ...
+    def deleteacc(self, user_id):
+        password = input("Enter your account password: ")
+        password = hashlib.sha256(password.encode()).hexdigest()
+
+        connect = sqlite3.connect(DB_PATH)
+        cursor = connect.cursor()
+
+        cursor.execute(
+            "SELECT password FROM users WHERE id = ?", (user_id,)
+        )
+
+        user_pass = cursor.fetchone()
+        connect.close()
+
+        if user_pass and user_pass[0] == password:
+            confirm = input("Are you sure, you want to DELETE YOUR ACCOUNT? (y/n): ")
+            confirm = confirm.lower()
+            if confirm == "y":
+                connect = sqlite3.connect(DB_PATH)
+                cursor = connect.cursor()
+
+                cursor.execute(
+                    "DELETE FROM expenses WHERE user_id = ?", (user_id,)
+                )
+
+                cursor.execute(
+                    "DELETE FROM users WHERE id = ?", (user_id,)
+                )
+
+                connect.commit()
+                connect.close()
+
+                print("Your account have been deleted successfully!")
+                return True
+
+            else:
+                print("Okay! Cancelled.")
+                return False
+
+        else:
+            print("Incorrect passsword! Try again...")
+            return False
