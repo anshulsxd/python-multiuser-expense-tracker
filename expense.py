@@ -2,9 +2,9 @@ import os
 import sqlite3
 from datetime import date
 
-app_dir = os.path.join(os.getenv("APPDATA"), "ExpenseTracker")
-os.makedirs(app_dir, exist_ok=True)
-DB_PATH = os.path.join(app_dir, "expensesDataBase.db")
+app_dir = os.path.join(os.getenv("APPDATA"), "ExpenseTracker") # this will form the location of database file under "appdata/roaming" folder.
+os.makedirs(app_dir, exist_ok=True) # this will create the folder in "appdata/roaming"
+DB_PATH = os.path.join(app_dir, "expensesDataBase.db") # this will create database file
 
 def create_table():
     connect = sqlite3.connect(DB_PATH)
