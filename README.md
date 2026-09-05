@@ -10,11 +10,15 @@ At the moment, the `.exe` version of **ExpenseTracker** available in the GitHub 
 
 Windows Defender/Microsoft security tools may display a **"Virus detected"** warning and block the download. This appears to be related to the way the application is packaged using **PyInstaller**, which can sometimes cause antivirus software to incorrectly flag PyInstaller-generated executables.
 
+- **Note that, executable file and project source code does not contain any virus and thread or any malicious file or stuff that may harm your device. The project is completely created by me and is safe for your device. If you are uncomfortable to download the `.exe` file, just download/clone the source code and review it if you have any doubt.**
+
 ### 🔧 Recommended Solution
 
-For now, if you encounter this issue, please use the **source code** provided in this repository instead of the pre-built `.exe`.
+After installation, your browser download section may display "Virus detected" with a "Keep file" button. Click that `keep file` button
 
-You can download/clone the source code and create the `.exe` yourself on your own device using PyInstaller.
+If you still encounter this issue, please use the **source code** provided in this repository instead of the pre-built `.exe`.
+
+You can download/clone the source code and create the `.exe` yourself on your own device using PyInstaller or a different library.
 
 ```bash
 pyinstaller --clean --onefile main.py
