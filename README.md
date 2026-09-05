@@ -2,6 +2,24 @@
 
 A Python-based Expense Tracker that allows users to securely manage accounts, record expenses, and store data using SQLite.
 
+## ⚠️ Important Notice Regarding the `.exe` Release
+
+> **Please read this before downloading the `.exe` file.**
+
+At the moment, the `.exe` version of **ExpenseTracker** available in the GitHub Release may not download or run correctly on some Windows systems. I tried to install my own app `ExpenseTrackerTerminal.exe` via Release and browser and MS Defender keep warning "Virus/Thread detected".
+
+Windows Defender/Microsoft security tools may display a **"Virus detected"** warning and block the download. This appears to be related to the way the application is packaged using **PyInstaller**, which can sometimes cause antivirus software to incorrectly flag PyInstaller-generated executables.
+
+### 🔧 Recommended Solution
+
+For now, if you encounter this issue, please use the **source code** provided in this repository instead of the pre-built `.exe`.
+
+You can download/clone the source code and create the `.exe` yourself on your own device using PyInstaller.
+
+```bash
+pyinstaller --clean --onefile main.py
+```
+
 ## Features
 
 - User account system
